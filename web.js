@@ -15,4 +15,4 @@ app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
 app.use('/', express_1.default.static(path_1.default.join(__dirname, 'public')));
 app.use('/api', routes_1.default);
-app.listen(port,()=>Console.log("All is Ok"));
+app.listen(port,()=>console.log("All is Ok"));
