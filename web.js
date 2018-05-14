@@ -7,7 +7,7 @@ const express_1 = __importDefault(require("express"));
 const path_1 = __importDefault(require("path"));
 const routes_1 = __importDefault(require("./routes/routes"));
 const app = express_1.default();
-const port  = process.env.PORT || 3000;
+const port  = process.env.PORT ;
 app.get('/',function(req,res){
     res.send("Welcome");
 });
