@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/4/w3.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
-
+    <script src = "index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
@@ -23,9 +23,9 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="/style_files/material-design-iconic-font.min.css">
     <!--===============================================================================================-->
-   
+
     <!--===============================================================================================-->
-    
+
     <style>
         html,
         body,
@@ -49,30 +49,80 @@
     </br>
     <div class="w3-container ">
         <div class=" w3-display-container w3-card w3-light-grey w3-hover-shadow w3-padding-64 w3-center" style="float:left; margin: 5% 5% 5% 5%; width:40%; height:15%">
-            <p ><font class="w3-display-topleft" size="5" style="float: left; margin: 20px 30px"><b>Courses</b></font></p>
-            <div class="w3-display-topright">  <input class=" w3-input w3-border" style="width:90px; margin: 20px 30px" name="courseId" type="text" placeholder="Id">
+            <p>
+                <font class="w3-display-topleft" size="5" style="float: left; margin: 20px 30px">
+                    <b>Courses</b>
+                </font>
+            </p>
             
-            <button class=" w3-btn w3-aqua w3-border w3-round-large" style="margin: 20px 20px">See By Id</button>
-        
-            <button class=" w3-btn w3-aqua w3-border w3-round-large" style="float: right; margin: 20px 10px 20px 20px">See All</button>
+                <input class="w3-display-topmiddle w3-input w3-border" style="width:40px; margin: 20px 10px" name="courseId" type="text" placeholder="Id">
+                <div class="w3-display-topright">
+                <button class=" w3-btn w3-aqua w3-border w3-round-large" style="margin: 20px 5px">See By Id</button>
+
+                <button class=" w3-btn w3-aqua w3-border w3-round-large" style="float: right; margin: 20px 5px 20px 20px">See All</button>
+            </div>
+            <input id="courseName" class="w3-display-bottomleft w3-input w3-border w3-round-large" style="width:300px; float: left; margin: 20px 30px" name="course"
+                type="text" placeholder="Course Name">
+            <button id="btnCourseAdd" class="w3-display-bottomright w3-btn w3-blue w3-border w3-round-large " style="float: right; margin: 20px 20px 20px 20px">Add Course</button>
         </div>
-            <input class="w3-display-bottomleft w3-input w3-border" style="width:300px; float: left; margin: 20px 30px" name="course" type="text" placeholder="Enter the name of the course to add it in database">
-            <button class="w3-display-bottomright w3-btn w3-blue w3-border w3-round-large " style="float: right; margin: 20px 20px 20px 20px">Add Course</button>
-        </div>
+
+        <div class=" w3-display-container w3-card w3-light-grey w3-hover-shadow w3-padding-64 w3-center" style="float:right; margin: 5% 5% 5% 5%; width:40%; height:15%">
+                <p>
+                    <font class="w3-display-topleft" size="5" style="float: left; margin: 20px 30px">
+                        <b>Subjects</b>
+                    </font>
+                </p>
+                
+                    <input class="w3-display-topmiddle w3-input w3-border" style="width:40px; margin: 20px 10px" name="courseId" type="text" placeholder="Id">
+                    <div class="w3-display-topright">
+                    <button class=" w3-btn w3-aqua w3-border w3-round-large" style="margin: 20px 5px">See By Id</button>
     
-        <div class="w3-center w3-card w3-light-grey w3-hover-shadow w3-padding-64 w3-center" style="float:right; margin: 5% 5% 5% 5%; width:40%; height:15%">
-            <p>Subjects</p>
-        </div>
+                    <button class=" w3-btn w3-aqua w3-border w3-round-large" style="float: right; margin: 20px 5px 20px 20px">See All</button>
+                </div>
+                <input class="w3-display-bottomleft w3-input w3-border w3-round-large" style="width:160px; float: left; margin: 20px 30px" name="course"
+                    type="text" placeholder="Subject Name">
+                    <input class="w3-display-bottommiddle w3-input w3-border w3-round-large" style="float:left; width:75px; margin: 20px 10px" name="courseId" type="text" placeholder="courseId">
+                    
+                <button class="w3-display-bottomright w3-btn w3-blue w3-border w3-round-large " style="float: right; margin: 20px 20px 20px 20px">Add Course</button>
+            </div>
     </div>
     </br>
     <div class="w3-container w3-center">
-        <div class="w3-center w3-card w3-light-grey w3-hover-shadow w3-padding-64 w3-center" style="float:left; margin: 0% 5% 5% 5%; width:40%; height:15%">
-            <p>Students</p>
-        </div>
-    
-        <div class="w3-center w3-card w3-light-grey w3-hover-shadow w3-padding-64 w3-center" style="float:right; margin: 0% 5% 5% 5%; width:40%; height:15%">
-            <p>Teachers</p>
-        </div>
+            <div class=" w3-display-container w3-card w3-light-grey w3-hover-shadow w3-padding-64 w3-center" style="float:left; margin: 0% 5% 5% 5%; width:40%; height:15%">
+                    <p>
+                        <font class="w3-display-topleft" size="5" style="float: left; margin: 20px 30px">
+                            <b>Students</b>
+                        </font>
+                    </p>
+                    
+                        <input class="w3-display-topmiddle w3-input w3-border" style="width:40px; margin: 20px 10px" name="courseId" type="text" placeholder="Id">
+                        <div class="w3-display-topright">
+                        <button class=" w3-btn w3-aqua w3-border w3-round-large" style="margin: 20px 5px">See By Id</button>
+        
+                        <button class=" w3-btn w3-aqua w3-border w3-round-large" style="float: right; margin: 20px 5px 20px 20px">See All</button>
+                    </div>
+                    <input class="w3-display-bottomleft w3-input w3-border w3-round-large" style="width:300px; float: left; margin: 20px 30px" name="course"
+                        type="text" placeholder="Student Name">
+                    <button class="w3-display-bottomright w3-btn w3-blue w3-border w3-round-large " style="float: right; margin: 20px 20px 20px 20px">Add Course</button>
+                </div>
+
+                <div class=" w3-display-container w3-card w3-light-grey w3-hover-shadow w3-padding-64 w3-center" style="float:right; margin: 0% 5% 5% 5%; width:40%; height:15%">
+                        <p>
+                            <font class="w3-display-topleft" size="5" style="float: left; margin: 20px 30px">
+                                <b>Teachers</b>
+                            </font>
+                        </p>
+                        
+                            <input class="w3-display-topmiddle w3-input w3-border" style="width:40px; margin: 20px 10px" name="courseId" type="text" placeholder="Id">
+                            <div class="w3-display-topright">
+                            <button class=" w3-btn w3-aqua w3-border w3-round-large" style="margin: 20px 5px">See By Id</button>
+            
+                            <button class=" w3-btn w3-aqua w3-border w3-round-large" style="float: right; margin: 20px 5px 20px 20px">See All</button>
+                        </div>
+                        <input class="w3-display-bottomleft w3-input w3-border w3-round-large" style="width:300px; float: left; margin: 20px 30px" name="course"
+                            type="text" placeholder="Teacher name">
+                        <button class="w3-display-bottomright w3-btn w3-blue w3-border w3-round-large w3-round-large " style="float: right; margin: 20px 20px 20px 20px">Add Course</button>
+                    </div>
     </div>
 </body>
 
