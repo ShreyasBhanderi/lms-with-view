@@ -14,20 +14,24 @@ function addTeacher (name,done   ) {
       
 }
 function getTeacher (Id,done) {
+   
     function fun(json){
         console.log("here");
         console.log(json);
       }
-      
     
         $.ajax({
             type:'POST',
-            url:'https://jsonp.afeld.me/?callback=fun&url=https://learning-man-sys.herokuapp.com/api/teachers',
+            url:'https://jsonp.afeld.me/?callback=?&url=https://learning-man-sys.herokuapp.com/api/teachers',
             contentType:"application/json",
             dataType: "jsonp",
+            callBack: fun,
             done:function(data){
-                console.log("Success :"+data);
-                console.log(data.name);
+                console.log(fun(data));
+                function fun(json){
+                    console.log("here");
+                    console.log(json);
+                  }
             }
             ,
             error: function(data){
