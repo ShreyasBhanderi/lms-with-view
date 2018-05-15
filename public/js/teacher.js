@@ -52,10 +52,21 @@ $(function () {
     })
 
 })
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() {
+    modal.style.display = "none";
+}
 
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 $(function () {
     let teacherId = $('#teacherId')
-    
+    var modal = document.getElementById('myModal');
+
     $('#btnSeeByIdTeacher').click(async function () {
         if(teacherId.val().length==0){
             await window.alert("Teacher Id cannot be empty")
@@ -64,15 +75,7 @@ $(function () {
         await getTeacher(
             teacherId.val(),
             function (Teacher) {
-                $('#main').innerHTML = `<div id="myModal" class="modal">
-
-                <!-- Modal content -->
-                <div class="modal-content">
-                  <span class="close">&times;</span>
-                  <p>`+Teacher.data.name+`</p>
-                </div>
-              
-              </div>`
+                modal.style.display = "block";
             }
         )
 
