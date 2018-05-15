@@ -14,22 +14,12 @@ function addTeacher (name,done   ) {
       
 }
 function getTeacher (Id,done) {
-        $.ajax({
-            type:'POST',
-            url:'https://learning-man-sys.herokuapp.com/api/teachers/',
-            contentType:"application/json",
-            dataType:'jsonp',
-            data:$.parseJSON(data),
-            crossDomain:true,
-            success:function(data){
-                console.log("Success :"+data);
-                console.log(data.name);
-            }
-            ,
-            error: function(httpReq,status,exception){
-                alert(status+" "+exception);
-            }
+    $.getJSON('https://learning-man-sys.herokuapp.com/api/teachers/',
+        function(data){
+            console.log(data);
+           return false;
         });
+       
       
 }
 $(function () {
