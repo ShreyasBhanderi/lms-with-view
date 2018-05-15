@@ -149,7 +149,7 @@ class CourseRouter {
         });
     }
     deleteBatch(req, res) {
-        const id = req.params.id1;
+        const id = req.params.id;
         course_1.default.findOne({
             where: {
                 id: id
