@@ -63,7 +63,7 @@ $(function () {
         await getTeacher(
             teacherId.val(),
             function (Teacher) {
-                console.log(Teacher);
+                console.log(Teacher.data.name);
                 window.alert("Added " + Teacher.data.name + "Teacher to Database")
             }
         )
