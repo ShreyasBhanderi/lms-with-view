@@ -52,7 +52,7 @@ $(function () {
     })
 
 })
-var span = document.getElementsByClassName("close")[0];
+var span = $('#span');
 span.onclick = function() {
     modal.style.display = "none";
 }
