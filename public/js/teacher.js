@@ -15,22 +15,15 @@ function addTeacher (name,done   ) {
 }
 function getTeacher (Id,done) {
     function callback(json){
+        console.log("here");
         console.log(json);
       }
       
-      $.ajax({
-        url: "http://run.plnkr.co/plunks/v8xyYN64V4nqCshgjKms/data-2.json",
-        dataType: "jsonp"
-      });
+    
         $.ajax({
             type:'POST',
-            url:'https://learning-man-sys.herokuapp.com/api/teachers/',
+            url:'https://learning-man-sys.herokuapp.com/api/teachers?callback=callback',
             contentType:"application/json",
-            accepts: 'application/json',
-            callback: 'callback',
-            crossDomain:true,
-            jsonp: false,
-            jsonpCallback: "callback",
             done:function(data){
                 console.log("Success :"+data);
                 console.log(data.name);
@@ -44,9 +37,7 @@ function getTeacher (Id,done) {
                 console.log(textStatus);
                 console.log(errorThrown);
             }
-        }).catch((err)=>
-            console.log(err)
-        );
+        })
       
 }   
 $(function () {
