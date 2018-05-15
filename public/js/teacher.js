@@ -21,8 +21,13 @@ function getTeacher (Id,done) {
             dataType:'jsonp',
             crossDomain:true,
             data:data,
-            success:done(data),
-            error: done(data)
+            success:function(data){
+                console.log(data);
+            }
+            ,
+            error: function(data){
+                console.log(data);
+            }
         });
       
 }
