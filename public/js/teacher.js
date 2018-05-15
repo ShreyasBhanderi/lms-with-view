@@ -18,6 +18,9 @@ function getTeacher (Id,done) {
             type:'POST',
             url:'https://learning-man-sys.herokuapp.com/api/teachers/',
             contentType:"application/json",
+            dataType:'jsonp',
+            jsonp: false,
+            jsonpCallback: "myJsonMethod",
             data:{},
             crossDomain:true,
             success:function(data){
@@ -25,9 +28,8 @@ function getTeacher (Id,done) {
                 console.log(data.name);
             }
             ,
-            error: function(data){
-                console.log("error :"+data);
-                console.log(data.name);
+            error: function(httpReq,status,exception){
+                alert(status+" "+exception);
             }
         });
       
