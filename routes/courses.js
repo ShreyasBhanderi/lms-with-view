@@ -478,9 +478,10 @@ class CourseRouter {
                 data
                     .getBatch({ attributes: ["name", "id"] })
                     .then(data => {
-                    data
+                    data=data
                         .filter(x => x.id == req.params.id2)[0]
-                        .getStudent()
+                        console.log(data);
+                        data.getStudent()
                         .then(data => res.status(200).json(data))
                         .catch(error => {
                         res.status(500).json({ error });
