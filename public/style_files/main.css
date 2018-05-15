@@ -1,0 +1,1555 @@
+/*//////////////////////////////////////////////////////////////////
+[ FONT ]*/
+@font-face {
+	font-family: Poppins-Regular;
+	src: url('../fonts/poppins/Poppins-Regular.ttf');
+}
+
+@font-face {
+	font-family: Poppins-Medium;
+	src: url('../fonts/poppins/Poppins-Medium.ttf');
+}
+
+/*! CSS Used from: https://colorlib.com/etc/lf/Login_v2/vendor/bootstrap/css/bootstrap.min.css */
+@media print {
+	*, ::after, ::before {
+		text-shadow: none !important;
+		box-shadow: none !important;
+	}
+}
+/*! CSS Used from: https://tympanus.net/Tutorials/CustomDropDownListStyling/css/style.css */
+/*! @import https://tympanus.net/Tutorials/CustomDropDownListStyling/css/demo.css */
+a {
+	color: #555;
+	text-decoration: none;
+}
+/*! end @import */
+/*! @import https://tympanus.net/Tutorials/CustomDropDownListStyling/css/font-awesome.css */
+[class^="icon-"]:before, [class*=" icon-"]:before {
+	font-family: FontAwesome;
+	font-weight: normal;
+	font-style: normal;
+	display: inline-block;
+	text-decoration: inherit;
+}
+
+a [class^="icon-"], a [class*=" icon-"] {
+	display: inline-block;
+	text-decoration: inherit;
+}
+
+.icon-large:before {
+	vertical-align: top;
+	font-size: 1.3333333333333333em;
+}
+
+li [class^="icon-"], li [class*=" icon-"] {
+	display: inline-block;
+	width: 1.25em;
+	text-align: center;
+}
+
+li .icon-large[class^="icon-"], li .icon-large[class*=" icon-"] {
+	width: 1.875em;
+}
+
+.icon-envelope:before {
+	content: "\f003";
+}
+
+.icon-plane:before {
+	content: "\f072";
+}
+
+.icon-truck:before {
+	content: "\f0d1";
+}
+/*! end @import */
+*, *:after, *:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+::selection {
+	background: transparent;
+}
+
+::-moz-selection {
+	background: transparent;
+}
+
+.wrapper-dropdown-3 {
+	position: relative;
+	width: 200px;
+	margin: 0 auto;
+	padding: 10px;
+	background: #fff;
+	border-radius: 7px;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	box-shadow: 0 1px 1px rgba(50, 50, 50, 0.1);
+	cursor: pointer;
+	outline: none;
+	font-weight: bold;
+	color: #8AA8BD;
+}
+
+.wrapper-dropdown-3:after {
+	content: "";
+	width: 0;
+	height: 0;
+	position: absolute;
+	right: 15px;
+	top: 50%;
+	margin-top: -3px;
+	border-width: 6px 6px 0 6px;
+	border-style: solid;
+	border-color: #8aa8bd transparent;
+}
+
+.wrapper-dropdown-3 .dropdown {
+	position: absolute;
+	top: 140%;
+	left: 0;
+	right: 0;
+	background: white;
+	border-radius: inherit;
+	border: 1px solid rgba(0, 0, 0, 0.17);
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+	font-weight: normal;
+	-webkit-transition: all 0.5s ease-in;
+	-moz-transition: all 0.5s ease-in;
+	-ms-transition: all 0.5s ease-in;
+	-o-transition: all 0.5s ease-in;
+	transition: all 0.5s ease-in;
+	list-style: none;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.wrapper-dropdown-3 .dropdown:after {
+	content: "";
+	width: 0;
+	height: 0;
+	position: absolute;
+	bottom: 100%;
+	right: 15px;
+	border-width: 0 6px 6px 6px;
+	border-style: solid;
+	border-color: #fff transparent;
+}
+
+.wrapper-dropdown-3 .dropdown:before {
+	content: "";
+	width: 0;
+	height: 0;
+	position: absolute;
+	bottom: 100%;
+	right: 13px;
+	border-width: 0 8px 8px 8px;
+	border-style: solid;
+	border-color: rgba(0, 0, 0, 0.1) transparent;
+}
+
+
+.wrapper-dropdown-3 .dropdown li a {
+	display: block;
+	padding: 10px;
+	text-decoration: none;
+	color: #8aa8bd;
+	border-bottom: 1px solid #e6e8ea;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 1);
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+}
+
+/*! CSS Used from: http://tablesorter.com/themes/blue/style.css */
+table.tablesorter {
+	font-family: arial;
+	background-color: #CDCDCD;
+	margin: 10px 0pt 15px;
+	font-size: 8pt;
+	width: 100%;
+	text-align: center;
+}
+
+table.tablesorter thead tr th, table.tablesorter tfoot tr th {
+	background-color: #e6EEEE;
+	border: 1px solid #FFF;
+	font-size: 8pt;
+	padding: 4px;
+}
+
+table.tablesorter thead tr .header {
+	background-image: url(http://tablesorter.com/themes/blue/bg.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	cursor: pointer;
+}
+
+table.tablesorter tbody td {
+	color: #3D3D3D;
+	padding: 4px;
+	background-color: #FFF;
+	vertical-align: top;
+}
+
+table.tablesorter tbody tr.odd td {
+	background-color: #F0F0F6;
+}
+
+table.tablesorter thead tr .headerSortUp {
+	background-image: url(http://tablesorter.com/themes/blue/asc.gif);
+}
+
+table.tablesorter thead tr .headerSortUp {
+	background-color: #8dbdd8;
+}
+
+.wrapper-dropdown-3 .dropdown li i {
+	float: right;
+	color: inherit;
+}
+
+.wrapper-dropdown-3 .dropdown li:first-of-type a {
+	border-radius: 7px 7px 0 0;
+}
+
+.wrapper-dropdown-3 .dropdown li:last-of-type a {
+	border: none;
+	border-radius: 0 0 7px 7px;
+}
+
+.wrapper-dropdown-3 .dropdown li:hover a {
+	background: #f3f8f8;
+}
+
+.wrapper-dropdown-3.active .dropdown {
+	opacity: 1;
+	pointer-events: auto;
+}
+/*! CSS Used fontfaces */
+@font-face {
+	font-family: "FontAwesome";
+	src:
+		url(https://tympanus.net/Tutorials/CustomDropDownListStyling/font/fontawesome-webfont.eot);
+	src:
+		url(https://tympanus.net/Tutorials/CustomDropDownListStyling/font/fontawesome-webfont.eot#iefix)
+		format('eot'),
+		url(https://tympanus.net/Tutorials/CustomDropDownListStyling/font/fontawesome-webfont.woff)
+		format('woff'),
+		url(https://tympanus.net/Tutorials/CustomDropDownListStyling/font/fontawesome-webfont.ttf)
+		format('truetype'),
+		url(https://tympanus.net/Tutorials/CustomDropDownListStyling/font/fontawesome-webfont.svg#FontAwesome)
+		format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+*, ::after, ::before {
+	box-sizing: inherit;
+}
+/*! CSS Used from: https://colorlib.com/etc/lf/Login_v2/fonts/iconic/css/material-design-iconic-font.min.css */
+.zmdi {
+	display: inline-block;
+	font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+/*! CSS Used from: https://tympanus.net/Tutorials/CustomDropDownListStyling/css/style.css */
+/*! @import https://tympanus.net/Tutorials/CustomDropDownListStyling/css/demo.css */
+/*! end @import */
+/*! @import https://tympanus.net/Tutorials/CustomDropDownListStyling/css/font-awesome.css */
+/*! end @import */
+*, *:after, *:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+::selection {
+	background: transparent;
+}
+
+::-moz-selection {
+	background: transparent;
+}
+
+.zmdi-eye:before {
+	content: '\f15c';
+}
+
+.zmdi-eye:before {
+	content: '\f15c';
+}
+/*! CSS Used from: https://colorlib.com/etc/lf/Login_v2/css/main.css */
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+/*! CSS Used fontfaces */
+@font-face {
+	font-family: Material-Design-Iconic-Font;
+	src:
+		url(https://colorlib.com/etc/lf/Login_v2/fonts/iconic/fonts/Material-Design-Iconic-Font.woff2?v=2.2.0)
+		format('woff2'),
+		url(https://colorlib.com/etc/lf/Login_v2/fonts/iconic/fonts/Material-Design-Iconic-Font.woff?v=2.2.0)
+		format('woff'),
+		url(https://colorlib.com/etc/lf/Login_v2/fonts/iconic/fonts/Material-Design-Iconic-Font.ttf?v=2.2.0)
+		format('truetype');
+}
+
+@font-face {
+	font-family: Poppins-Bold;
+	src: url('../fonts/poppins/Poppins-Bold.ttf');
+}
+
+@font-face {
+	font-family: Poppins-SemiBold;
+	src: url('../fonts/poppins/Poppins-SemiBold.ttf');
+}
+/*! CSS Used from: https://colorlib.com/etc/lf/Login_v2/vendor/bootstrap/css/bootstrap.min.css */
+@media print {
+	*, ::after, ::before {
+		text-shadow: none !important;
+		box-shadow: none !important;
+	}
+}
+
+*, ::after, ::before {
+	box-sizing: inherit;
+}
+
+input {
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+}
+
+input {
+	margin: 0;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+input {
+	overflow: visible;
+}
+/*! CSS Used from: https://colorlib.com/etc/lf/Login_v2/fonts/iconic/css/material-design-iconic-font.min.css */
+.zmdi {
+	display: inline-block;
+	font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.zmdi-eye:before {
+	content: '\f15c';
+}
+
+.zmdi-eye:before {
+	content: '\f15c';
+}
+/*! CSS Used from: https://colorlib.com/etc/lf/Login_v2/css/main.css */
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+input {
+	outline: none;
+	border: none;
+}
+
+input:focus {
+	border-color: transparent !important;
+}
+
+input:focus::-webkit-input-placeholder {
+	color: transparent;
+}
+
+input:focus:-moz-placeholder {
+	color: transparent;
+}
+
+input:focus::-moz-placeholder {
+	color: transparent;
+}
+
+input:focus:-ms-input-placeholder {
+	color: transparent;
+}
+
+input::-webkit-input-placeholder {
+	color: #adadad;
+}
+
+input:-moz-placeholder {
+	color: #adadad;
+}
+
+input::-moz-placeholder {
+	color: #adadad;
+}
+
+input:-ms-input-placeholder {
+	color: #adadad;
+}
+
+.wrap-input100 {
+	width: 100%;
+	position: relative;
+	border-bottom: 2px solid #adadad;
+	margin-bottom: 37px;
+}
+
+.input100 {
+	font-family: Poppins-Regular;
+	font-size: 15px;
+	color: #555555;
+	line-height: 1.2;
+	display: block;
+	width: 100%;
+	height: 45px;
+	background: transparent;
+	padding: 0 5px;
+}
+
+.focus-input100 {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+}
+
+.focus-input100::before {
+	content: "";
+	display: block;
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	width: 0;
+	height: 2px;
+	-webkit-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	transition: all 0.4s;
+	background: #6a7dfe;
+	background: -webkit-linear-gradient(left, #21d4fd, #b721ff);
+	background: -o-linear-gradient(left, #21d4fd, #b721ff);
+	background: -moz-linear-gradient(left, #21d4fd, #b721ff);
+	background: linear-gradient(left, #21d4fd, #b721ff);
+}
+
+.focus-input100::after {
+	font-family: Poppins-Regular;
+	font-size: 15px;
+	color: #999999;
+	line-height: 1.2;
+	content: attr(data-placeholder);
+	display: block;
+	width: 100%;
+	position: absolute;
+	top: 16px;
+	left: 0px;
+	padding-left: 5px;
+	-webkit-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	transition: all 0.4s;
+}
+
+.input100:focus+.focus-input100::after {
+	top: -15px;
+}
+
+.input100:focus+.focus-input100::before {
+	width: 100%;
+}
+
+.btn-show-pass {
+	font-size: 15px;
+	color: #999999;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	align-items: center;
+	position: absolute;
+	height: 100%;
+	top: 0;
+	right: 0;
+	padding-right: 5px;
+	cursor: pointer;
+	-webkit-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	transition: all 0.4s;
+}
+
+.btn-show-pass:hover {
+	color: #6a7dfe;
+	color: -webkit-linear-gradient(left, #21d4fd, #b721ff);
+	color: -o-linear-gradient(left, #21d4fd, #b721ff);
+	color: -moz-linear-gradient(left, #21d4fd, #b721ff);
+	color: linear-gradient(left, #21d4fd, #b721ff);
+}
+
+.validate-input {
+	position: relative;
+}
+
+.alert-validate::before {
+	content: attr(data-validate);
+	position: absolute;
+	max-width: 70%;
+	background-color: #fff;
+	border: 1px solid #c80000;
+	border-radius: 2px;
+	padding: 4px 25px 4px 10px;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	right: 0px;
+	pointer-events: none;
+	font-family: Poppins-Regular;
+	color: #c80000;
+	font-size: 13px;
+	line-height: 1.4;
+	text-align: center;
+	visibility: hidden;
+	opacity: 0;
+	-webkit-transition: opacity 0.4s;
+	-o-transition: opacity 0.4s;
+	-moz-transition: opacity 0.4s;
+	transition: opacity 0.4s;
+}
+
+.alert-validate::after {
+	content: "\f06a";
+	font-family: FontAwesome;
+	font-size: 16px;
+	color: #c80000;
+	display: block;
+	position: absolute;
+	background-color: #fff;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	right: 5px;
+}
+
+.alert-validate:hover:before {
+	visibility: visible;
+	opacity: 1;
+}
+
+@media ( max-width : 992px) {
+	.alert-validate::before {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+/*! CSS Used fontfaces */
+@font-face {
+	font-family: Material-Design-Iconic-Font;
+	src:
+		url(https://colorlib.com/etc/lf/Login_v2/fonts/iconic/fonts/Material-Design-Iconic-Font.woff2?v=2.2.0)
+		format('woff2'),
+		url(https://colorlib.com/etc/lf/Login_v2/fonts/iconic/fonts/Material-Design-Iconic-Font.woff?v=2.2.0)
+		format('woff'),
+		url(https://colorlib.com/etc/lf/Login_v2/fonts/iconic/fonts/Material-Design-Iconic-Font.ttf?v=2.2.0)
+		format('truetype');
+}
+
+@font-face {
+	font-family: Poppins-Regular;
+	src:
+		url(https://colorlib.com/etc/lf/Login_v2/fonts/poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+	font-family: 'FontAwesome';
+	src:
+		url(https://colorlib.com/etc/lf/Login_v2/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.eot?v=4.7.0);
+	src:
+		url(https://colorlib.com/etc/lf/Login_v2/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.eot#iefix&v=4.7.0)
+		format('embedded-opentype'),
+		url(https://colorlib.com/etc/lf/Login_v2/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0)
+		format('woff2'),
+		url(https://colorlib.com/etc/lf/Login_v2/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff?v=4.7.0)
+		format('woff'),
+		url(https://colorlib.com/etc/lf/Login_v2/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf?v=4.7.0)
+		format('truetype'),
+		url(https://colorlib.com/etc/lf/Login_v2/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular)
+		format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*//////////////////////////////////////////////////////////////////
+[ RESTYLE TAG ]*/
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body, html {
+	height: 100%;
+	font-family: Poppins-Regular, sans-serif;
+}
+
+/*---------------------------------------------*/
+a {
+	font-family: Poppins-Regular;
+	font-size: 14px;
+	line-height: 1.7;
+	color: #666666;
+	margin: 0px;
+	transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+}
+
+a:focus {
+	outline: none !important;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #6a7dfe;
+	color: -webkit-linear-gradient(left, #21d4fd, #b721ff);
+	color: -o-linear-gradient(left, #21d4fd, #b721ff);
+	color: -moz-linear-gradient(left, #21d4fd, #b721ff);
+	color: linear-gradient(left, #21d4fd, #b721ff);
+}
+
+/*---------------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+	margin: 0px;
+}
+
+p {
+	font-family: Poppins-Regular;
+	font-size: 14px;
+	line-height: 1.7;
+	color: #666666;
+	margin: 0px;
+}
+
+ul, li {
+	margin: 0px;
+	list-style-type: none;
+}
+
+/*---------------------------------------------*/
+input {
+	outline: none;
+	border: none;
+}
+
+textarea {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border: 3px solid #ccc;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+	outline: none;
+}
+
+textarea:focus, input:focus {
+	border: 3px solid #555;
+}
+.in{
+	width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+.in:focus input[type="text"]:focus{
+	border: 3px solid #555;
+}
+.in:focus, input:focus::-webkit-input-placeholder {
+	border: 3px solid #555;
+}
+
+.in:focus, input:focus:-moz-placeholder {
+	border: 3px solid #555;
+}
+
+.in:focus, input:focus::-moz-placeholder {
+	border: 3px solid #555;
+}
+
+.in:focus, input:focus:-ms-input-placeholder {
+	border: 3px solid #555;
+}
+
+textarea:focus::-webkit-input-placeholder {
+	border: 3px solid #555;
+}
+
+textarea:focus:-moz-placeholder {
+	border: 3px solid #555;
+}
+
+textarea:focus::-moz-placeholder {
+	border: 3px solid #555;
+}
+
+textarea:focus:-ms-input-placeholder {
+	border: 3px solid #555;
+}
+
+input::-webkit-input-placeholder {
+	color: #adadad;
+}
+
+input:-moz-placeholder {
+	color: #adadad;
+}
+
+input::-moz-placeholder {
+	color: #adadad;
+}
+
+input:-ms-input-placeholder {
+	color: #adadad;
+}
+
+textarea::-webkit-input-placeholder {
+	color: #adadad;
+}
+
+textarea:-moz-placeholder {
+	color: #adadad;
+}
+
+textarea::-moz-placeholder {
+	color: #adadad;
+}
+
+textarea:-ms-input-placeholder {
+	color: #adadad;
+}
+
+/*---------------------------------------------*/
+button {
+	outline: none !important;
+	border: none;
+	background: transparent;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+iframe {
+	border: none !important;
+}
+
+/*//////////////////////////////////////////////////////////////////
+[ Utility ]*/
+.txt1 {
+	font-family: Poppins-Regular;
+	font-size: 13px;
+	color: #666666;
+	line-height: 1.5;
+}
+
+.txt2 {
+	font-family: Poppins-Regular;
+	font-size: 13px;
+	color: #333333;
+	line-height: 1.5;
+}
+
+/*//////////////////////////////////////////////////////////////////
+[ login ]*/
+.limiter {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.container-login100 {
+	width: 100%;
+	min-height: 100vh;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	padding: 15px;
+	background: #f2f2f2;
+}
+
+.wrap-login100 {
+	width: 390px;
+	background: #fff;
+	border-radius: 10px;
+	overflow: hidden;
+	padding: 77px 55px 33px 55px;
+	box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+	-o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+	-ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+/*------------------------------------------------------------------
+[ Form ]*/
+.login100-form {
+	width: 100%;
+}
+
+.login100-form-title {
+	display: block;
+	font-family: Poppins-Bold;
+	font-size: 30px;
+	color: #333333;
+	line-height: 1.2;
+	text-align: center;
+}
+
+.login100-form-title i {
+	font-size: 60px;
+}
+
+/*------------------------------------------------------------------
+[ Input ]*/
+.container {
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	font-size: 22px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+	position: absolute; left : 0;
+	height: 25px;
+	width: 25px;
+	background-color: #eee;
+	left: 0;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+	background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+	background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+	display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+	left: 9px;
+	top: 5px;
+	width: 5px;
+	height: 10px;
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.wrap-input100 {
+	width: 100%;
+	position: relative;
+	border-bottom: 2px solid #adadad;
+	margin-bottom: 37px;
+}
+
+.input100 {
+	font-family: Poppins-Regular;
+	font-size: 15px;
+	color: #555555;
+	line-height: 1.2;
+	display: block;
+	width: 100%;
+	height: 45px;
+	background: transparent;
+	padding: 0 5px;
+}
+
+/*---------------------------------------------*/
+.focus-input100 {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+}
+
+.focus-input100::before {
+	content: "";
+	display: block;
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	width: 0;
+	height: 2px;
+	-webkit-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	transition: all 0.4s;
+	background: #6a7dfe;
+	background: -webkit-linear-gradient(left, #21d4fd, #b721ff);
+	background: -o-linear-gradient(left, #21d4fd, #b721ff);
+	background: -moz-linear-gradient(left, #21d4fd, #b721ff);
+	background: linear-gradient(left, #21d4fd, #b721ff);
+}
+
+.focus-input100::after {
+	font-family: Poppins-Regular;
+	font-size: 15px;
+	color: #999999;
+	line-height: 1.2;
+	content: attr(data-placeholder);
+	display: block;
+	width: 100%;
+	position: absolute;
+	top: 16px;
+	left: 0px;
+	padding-left: 5px;
+	-webkit-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	transition: all 0.4s;
+}
+
+.input100:focus+.focus-input100::after {
+	top: -15px;
+}
+
+.input100:focus+.focus-input100::before {
+	width: 100%;
+}
+
+.has-val.input100+.focus-input100::after {
+	top: -15px;
+}
+
+.has-val.input100+.focus-input100::before {
+	width: 100%;
+}
+
+/*---------------------------------------------*/
+.btn-show-pass {
+	font-size: 15px;
+	color: #999999;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	align-items: center;
+	position: absolute;
+	height: 100%;
+	top: 0;
+	right: 0;
+	padding-right: 5px;
+	cursor: pointer;
+	-webkit-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	transition: all 0.4s;
+}
+
+.btn-show-pass:hover {
+	color: #6a7dfe;
+	color: -webkit-linear-gradient(left, #21d4fd, #b721ff);
+	color: -o-linear-gradient(left, #21d4fd, #b721ff);
+	color: -moz-linear-gradient(left, #21d4fd, #b721ff);
+	color: linear-gradient(left, #21d4fd, #b721ff);
+}
+
+.btn-show-pass.active {
+	color: #6a7dfe;
+	color: -webkit-linear-gradient(left, #21d4fd, #b721ff);
+	color: -o-linear-gradient(left, #21d4fd, #b721ff);
+	color: -moz-linear-gradient(left, #21d4fd, #b721ff);
+	color: linear-gradient(left, #21d4fd, #b721ff);
+}
+
+/*------------------------------------------------------------------
+[ Button ]*/
+.container-login100-form-btn {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding-top: 13px;
+}
+
+.wrap-login100-form-btn {
+	width: 100%;
+	display: block;
+	position: relative;
+	z-index: 1;
+	border-radius: 25px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+#ticket-table {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#ticket-table td, #ticket-table th {
+	background-color: #c0c0c0;
+	color: white;
+	background: #c0c0c0;
+	background: -webkit-linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
+	background: -o-linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
+	background: -moz-linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
+	background: linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
+	-webkit-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	transition: all 0.4s;
+}
+
+#ticket-table tr:nth-child(even) {
+	background-color: #c0c0c0;
+}
+
+#ticket-table tr:hover {
+	background-color: #c0c0c0;
+	color: white;
+	background: #c0c0c0;
+	background: -webkit-linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
+	background: -o-linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
+	background: -moz-linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
+	background: linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
+	-webkit-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	transition: all 0.4s;
+}
+
+/*! CSS Used from: https://colorlib.com/etc/tb/Table_Fixed_Header/vendor/bootstrap/css/bootstrap.min.css */
+@media print {
+	*, ::after, ::before {
+		text-shadow: none !important;
+		box-shadow: none !important;
+	}
+	thead {
+		display: table-header-group;
+	}
+	tr {
+		page-break-inside: avoid;
+	}
+}
+
+*, ::after, ::before {
+	box-sizing: inherit;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+th {
+	text-align: center;
+}
+/*! CSS Used from: https://colorlib.com/etc/tb/Table_Fixed_Header/vendor/perfect-scrollbar/perfect-scrollbar.css */
+.ps {
+	overflow: hidden !important;
+	overflow-anchor: none;
+	-ms-overflow-style: none;
+	touch-action: auto;
+	-ms-touch-action: auto;
+}
+
+.ps__rail-x {
+	display: none;
+	opacity: 0;
+	transition: background-color .2s linear, opacity .2s linear;
+	-webkit-transition: background-color .2s linear, opacity .2s linear;
+	height: 15px;
+	bottom: 0px;
+	position: absolute;
+}
+
+.ps__rail-y {
+	display: none;
+	opacity: 0;
+	transition: background-color .2s linear, opacity .2s linear;
+	-webkit-transition: background-color .2s linear, opacity .2s linear;
+	width: 15px;
+	right: 0;
+	position: absolute;
+}
+
+.ps--active-y>.ps__rail-y {
+	display: block;
+	background-color: transparent;
+}
+
+.ps:hover>.ps__rail-x, .ps:hover>.ps__rail-y {
+	opacity: 0.6;
+}
+
+.ps__rail-x:hover, .ps__rail-y:hover, .ps__rail-x:focus, .ps__rail-y:focus
+	{
+	background-color: #eee;
+	opacity: 0.9;
+}
+
+.ps__thumb-x {
+	background-color: #aaa;
+	border-radius: 6px;
+	transition: background-color .2s linear, height .2s ease-in-out;
+	-webkit-transition: background-color .2s linear, height .2s ease-in-out;
+	height: 6px;
+	bottom: 2px;
+	position: absolute;
+}
+
+.ps__thumb-y {
+	background-color: #aaa;
+	border-radius: 6px;
+	transition: background-color .2s linear, width .2s ease-in-out;
+	-webkit-transition: background-color .2s linear, width .2s ease-in-out;
+	width: 6px;
+	right: 2px;
+	position: absolute;
+}
+
+.ps__rail-x:hover>.ps__thumb-x, .ps__rail-x:focus>.ps__thumb-x {
+	background-color: #999;
+	height: 11px;
+}
+
+.ps__rail-y:hover>.ps__thumb-y, .ps__rail-y:focus>.ps__thumb-y {
+	background-color: #999;
+	width: 11px;
+}
+
+@media screen and (-ms-high-contrast: active) , ( -ms-high-contrast :
+	none) {
+	.ps {
+		overflow: auto !important;
+	}
+}
+/*! CSS Used from: https://colorlib.com/etc/tb/Table_Fixed_Header/css/util.css */
+.m-b-110 {
+	margin-bottom: 110px;
+}
+/*! CSS Used from: https://colorlib.com/etc/tb/Table_Fixed_Header/css/main.css */
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+.js-pscroll {
+	position: relative;
+	overflow: hidden;
+}
+
+.table100 .ps__rail-y {
+	width: 9px;
+	background-color: transparent;
+	opacity: 1 !important;
+	right: 5px;
+}
+
+.table100 .ps__rail-y::before {
+	content: "";
+	display: block;
+	position: absolute;
+	background-color: #ebebeb;
+	border-radius: 5px;
+	width: 100%;
+	height: calc(100% - 30px);
+	left: 0;
+	top: 15px;
+}
+
+.table100 .ps__rail-y .ps__thumb-y {
+	width: 100%;
+	right: 0;
+	background-color: transparent;
+	opacity: 1 !important;
+}
+
+.table100 .ps__rail-y .ps__thumb-y::before {
+	content: "";
+	display: block;
+	position: absolute;
+	background-color: #cccccc;
+	border-radius: 5px;
+	width: 100%;
+	height: calc(100% - 30px);
+	left: 0;
+	top: 15px;
+}
+
+.table100 {
+	background-color: #fff;
+}
+
+table {
+	width: 100%;
+}
+
+th, td {
+	font-weight: unset;
+	padding-right: 10px;
+}
+
+.column1 {
+	width: 24%;
+	padding-left: 20px;
+	text-align:center;
+}
+
+.column2 {
+	width: 10%;
+	text-align:center;
+}
+
+.column3 {
+	width: 13%;
+	text-align:center;
+}
+
+.column4 {
+	width: 13%;
+	text-align:center;
+}
+
+.column5 {
+	width: 14%;
+	text-align:center;
+	padding-right: 20px;
+}
+
+
+
+.table100-head th {
+	padding-top: 18px;
+	padding-bottom: 18px;
+}
+
+.table100-body td {
+	padding-top: 16px;
+	padding-bottom: 16px;
+}
+
+.table100 {
+	position: relative;
+	padding-top: 60px;
+}
+
+.table100-head {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+.table100-body {
+	max-height: 585px;
+	overflow: auto;
+}
+
+.table100.ver5 {
+	margin-right: -30px;
+}
+
+.table100.ver5 .table100-head {
+	padding-right: 30px;
+}
+
+.table100.ver5 th {
+	font-family: Lato-Bold;
+	font-size: 14px;
+	color: #555555;
+	line-height: 1.4;
+	text-transform: uppercase;
+	background-color: transparent;
+}
+
+.table100.ver5 td {
+	font-family: Lato-Regular;
+	font-size: 15px;
+	color: #808080;
+	line-height: 1.4;
+	background-color: #f7f7f7;
+}
+
+.table100.ver5 .table100-body tr {
+	overflow: hidden;
+	border-bottom: 10px solid #fff;
+	border-radius: 10px;
+}
+
+.table100.ver5 .table100-body table {
+	border-collapse: separate;
+	border-spacing: 0 10px;
+}
+
+.table100.ver5 .table100-body td {
+	border: solid 1px transparent;
+	border-style: solid none;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.table100.ver5 .table100-body td:first-child {
+	border-left-style: solid;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+.table100.ver5 .table100-body td:last-child {
+	border-right-style: solid;
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.table100.ver5 tr:hover td {
+	background-color: #ebebeb;
+	cursor: pointer;
+}
+
+.table100.ver5 .table100-head th {
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+.table100.ver5 {
+	overflow: hidden;
+}
+
+.table100.ver5 .table100-body {
+	padding-right: 30px;
+}
+
+.table100.ver5 .ps__rail-y {
+	right: 0px;
+}
+
+.table100.ver5 .ps__rail-y::before {
+	background-color: #ebebeb;
+}
+
+.table100.ver5 .ps__rail-y .ps__thumb-y::before {
+	background-color: #cccccc;
+}
+/*! CSS Used fontfaces */
+@font-face {
+	font-family: Lato-Bold;
+	src:
+		url(https://colorlib.com/etc/tb/Table_Fixed_Header/fonts/Lato/Lato-Bold.ttf);
+}
+
+@font-face {
+	font-family: Lato-Regular;
+	src:
+		url(https://colorlib.com/etc/tb/Table_Fixed_Header/fonts/Lato/Lato-Regular.ttf);
+}
+
+#ticket-table th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: center;
+	background-color: #c0c0c0;
+	color: white;
+	background: #c0c0c0;
+	background: -webkit-linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
+	background: -o-linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
+	background: -moz-linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
+	background: linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
+	-webkit-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	transition: all 0.4s;
+	color: white;
+}
+
+.login100-form-bgbtn {
+	position: absolute;
+	z-index: -1;
+	width: 300%;
+	height: 100%;
+	background: #a64bf4;
+	background: -webkit-linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
+	background: -o-linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
+	background: -moz-linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
+	background: linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
+	top: 0;
+	left: -100%;
+	-webkit-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	transition: all 0.4s;
+	height: 100%;
+}
+
+.login100-form-btn {
+	font-family: Poppins-Medium;
+	font-size: 15px;
+	color: #fff;
+	line-height: 1.2;
+	text-transform: uppercase;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 20px;
+	width: 100%;
+	height: 50px;
+}
+
+.wrap-login100-form-btn:hover .login100-form-bgbtn {
+	left: 0;
+}
+
+/*------------------------------------------------------------------
+[ Responsive ]*/
+@media ( max-width : 576px) {
+	.wrap-login100 {
+		padding: 77px 15px 33px 15px;
+	}
+}
+
+/*------------------------------------------------------------------
+[ Alert validate ]*/
+.validate-input {
+	position: relative;
+}
+
+.alert-validate::before {
+	content: attr(data-validate);
+	position: absolute;
+	max-width: 70%;
+	background-color: #fff;
+	border: 1px solid #c80000;
+	border-radius: 2px;
+	padding: 4px 25px 4px 10px;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	right: 0px;
+	pointer-events: none;
+	font-family: Poppins-Regular;
+	color: #c80000;
+	font-size: 13px;
+	line-height: 1.4;
+	text-align: center;
+	visibility: hidden;
+	opacity: 0;
+	-webkit-transition: opacity 0.4s;
+	-o-transition: opacity 0.4s;
+	-moz-transition: opacity 0.4s;
+	transition: opacity 0.4s;
+}
+
+.alert-validate::after {
+	content: "\f06a";
+	font-family: FontAwesome;
+	font-size: 16px;
+	color: #c80000;
+	display: block;
+	position: absolute;
+	background-color: #fff;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	right: 5px;
+}
+
+.alert-validate:hover:before {
+	visibility: visible;
+	opacity: 1;
+}
+
+@media ( max-width : 992px) {
+	.alert-validate::before {
+		visibility: visible;
+		opacity: 1;
+	}
+}
