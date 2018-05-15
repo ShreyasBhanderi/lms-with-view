@@ -156,9 +156,10 @@ class CourseRouter {
             }
         })
             .then(data => {
-            {
+            {   
+
                 data.getBatch().then(obj => {
-                    data.setBatch(obj.filter(x => x.name != req.body.name)).then();
+                    data.setBatch(obj.filter(x => x.name != req.body.name));
                     res.status(200).json(obj.filter(x => x.name != req.body.name));
                 });
             }
@@ -247,11 +248,11 @@ class CourseRouter {
                             .json(obj.filter(x => x.name != req.body.name));
                     })
                         .catch(error => {
-                        res.status(500).json({ error });
+                        res.status(500).json("error 2");
                     });
                 })
                     .catch(error => {
-                    res.status(500).json({ error });
+                    res.status(500).json("error 3");
                 });
             }
         })
