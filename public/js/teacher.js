@@ -64,7 +64,7 @@ $(function () {
             teacherId.val(),
             function (Teacher) {
                 console.log(Teacher);
-                window.alert("Added " + Teacher.name + "Teacher to Database")
+                window.alert("Added " + Teacher.data + "Teacher to Database")
             }
         )
 
