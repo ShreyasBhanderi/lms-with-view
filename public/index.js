@@ -1,19 +1,9 @@
 function addCourse (name,done) {
-    $.ajax({
-        type:'POST',
-        url:'https://learning-man-sys.herokuapp.com/api/courses',
-        contentType:"application/json",
-        dataType:'jsonp',
-        crossDomain:true,
-        data:{name:name},
-        success:function (data) {
-            done(data)
-        },
-        error: function (name) {
-            done(name)
-        }
-    });
-    
+    $.post('https://learning-man-sys.herokuapp.com/api/courses', {
+        name: name
+    }, function (data) {
+        done(data)
+    })
 }
 $(function () {
     let courseName = $('#courseName')
