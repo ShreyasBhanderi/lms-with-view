@@ -16,11 +16,11 @@ function addTeacher (name,done   ) {
 function getTeacher (Id,done   ) {
     $.get('https://learning-man-sys.herokuapp.com/api/teachers', function (data) {
         done(data)}
-    ).done(function() {
+    ).done(function(data) {
         
         done(data)
       })
-      .fail(function() {
+      .fail(function(data) {
         
         done(data)
       })
