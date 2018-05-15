@@ -1,20 +1,17 @@
 function addTeacher (name,done   ) {
-
-      $.ajax({
-        type:'POST',
-        url:'https://jsonp.afeld.me/?callback=?&url=https://learning-man-sys.herokuapp.com/api/teachers/',
-        contentType:"application/json",
-        dataType: "jsonp",
-        data: {name:name},
-        success:function(data){
-            done({name:name});
-        }
-        ,
-        error: function(data){
-            console.log("error");
-        },
-        jsonp: 'jsonp' 
-    })
+    $.post('https://learning-man-sys.herokuapp.com/api/teachers', {
+        name: name
+    }, function (data) {
+        done({name:name})}
+    ).done(function() {
+        
+        done({name:name})
+      })
+      .fail(function() {
+        
+        done({name:name})
+      })
+      
       
 }
 function getTeacher (Id,done) {
@@ -47,7 +44,7 @@ $(function () {
         await addTeacher(
             teacherName.val(),
             function (addedTeacher) {
-                window.alert("Added " + addedTeacher.name + "Teacher to Database")
+                window.alert("Added " + addedTeacher.name + " Teacher to Database")
             }
         )
 
@@ -67,8 +64,15 @@ $(function () {
         await getTeacher(
             teacherId.val(),
             function (Teacher) {
-                console.log(Teacher.data.name   );
-                window.alert("Added " + Teacher.data.name + "Teacher to Database")
+                $('#main').innerHTML = `<div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <p>`+Teacher.data.name+`</p>
+                </div>
+              
+              </div>`
             }
         )
 
