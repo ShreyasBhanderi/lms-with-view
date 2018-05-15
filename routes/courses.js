@@ -175,13 +175,14 @@ class CourseRouter {
             }
         })
             .then(data => {
-            {
+            
                 data
                     .getBatch({ attributes: ["name", "id"] })
                     .then(data => {
-                    data
+                   data =  data
                         .filter(x => x.id == req.params.id2)[0]
-                        .getLecture()
+                        console.log(data);
+                        data.getLecture()
                         .then(data => res.status(200).json(data))
                         .catch(error => {
                         res.status(500).json("error 1");
@@ -190,7 +191,7 @@ class CourseRouter {
                     .catch(error => {
                     res.status(500).json("error 2");
                 });
-            }
+            
         })
             .catch(error => {
             res.status(500).json("error 3");
@@ -551,7 +552,7 @@ class CourseRouter {
         this.router.get("/:id1/batches/:id2/lectures", this.lectures);
         this.router.post("/:id1/batches/:id2/lectures", this.addLecture);
         this.router.delete("/:id1/batches/:id2/lectures", this.deleteLecture);
-        this.router.get("/:id1/batches/:id2/lectures/id3", this.oneLecture);
+        this.router.get("/:id1/batches/:id2/lectures/:id3", this.oneLecture);
         this.router.get("/:id1/batches/:id2/students", this.students);
         this.router.post("/:id1/batches/:id2/students", this.addStudent);
         this.router.delete("/:id1/batches/:id2/students", this.deleteStudent);
