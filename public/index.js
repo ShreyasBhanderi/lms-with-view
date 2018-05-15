@@ -1,4 +1,4 @@
-function addCourse (name,done) {
+function addCourse (name,done   ) {
     $.post('https://learning-man-sys.herokuapp.com/api/courses', {
         name: name
     }, function (data) {
