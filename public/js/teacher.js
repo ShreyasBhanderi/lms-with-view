@@ -21,7 +21,11 @@ function getTeacher (Id,done) {
             dataType:'jsonp',
             jsonp: false,
             jsonpCallback: "myJsonMethod",
-            data:{},
+            data: {
+                format: 'jsonp',
+                key: 'XXX',
+                appid: 730
+            },
             crossDomain:true,
             success:function(data){
                 console.log("Success :"+data);
