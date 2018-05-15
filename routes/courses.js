@@ -157,9 +157,9 @@ class CourseRouter {
         })
             .then(data => {
             {
-                data.getBatch({ attributes: ["name", "id"] }).then(data => {
-                    data.setBatch(data.filter(x => x.name != req.body.name));
-                    res.status(200).json(data.filter(x => x.name != req.body.name));
+                data.getBatch({ attributes: ["name", "id"] }).then(obj => {
+                    data.setBatch(obj.filter(x => x.name != req.body.name));
+                    res.status(200).json(obj.filter(x => x.name != req.body.name));
                 });
             }
         })
