@@ -242,7 +242,7 @@ class CourseRouter {
                     data
                         .getLecture({ attributes: ["name", "id"] })
                         .then(obj => {
-                        data.setLectures(obj.filter(x => x.name != req.body.name));
+                        data.setLecture(obj.filter(x => x.name != req.body.name));
                         res
                             .status(200)
                             .json(obj.filter(x => x.name != req.body.name));
