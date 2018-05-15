@@ -26,9 +26,10 @@ function getTeacher (Id,done) {
             type:'POST',
             url:'https://learning-man-sys.herokuapp.com/api/teachers/',
             contentType:"application/json",
-            dataType:'jsonp',
+            accepts: 'application/json',
+            callback: 'callback',
             crossDomain:true,
-            success:function(data){
+            done:function(data){
                 console.log("Success :"+data);
                 console.log(data.name);
             }
