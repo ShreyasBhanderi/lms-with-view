@@ -120,10 +120,8 @@ async function setUpAllModal(data, title,type,course,batch) {
   }
 }
 function showModal(data,title,type,course,batch){
-    console.log(title,type,course,batch);
     $("#title").text(title);
     
-    console.log("here1");
   $("#id").text(data.id);
   $("#name").text(data.name);
   $("#createdAt").text(data.createdAt);
@@ -131,7 +129,6 @@ function showModal(data,title,type,course,batch){
     $("#myModal").show();
     if(type=="student"){
         
-        console.log("here2");
         $("#input").attr("placeholder", "Enroll in batch");
         $('#input').show();
         $('#buttonNew').show();
@@ -143,22 +140,21 @@ function showModal(data,title,type,course,batch){
     }
     if(type=="course"){
         
-        console.log("here3");
         $('#myModal').show();
         $("#input").attr("placeholder", "Add batch");
         $('#input').show();
         $('#buttonNew').show();
         $('#buttonNew').text("Add Batch");
-        $('#buttonNew').click(function(){addCourseBatch(data.id,$('#input').val(),(obj)=>alert("batch "+obj.name+" added to course "+data.name))});
-        $('#buttonNew2').show();
+        
         $("#buttonNew").off("click");
+        $('#buttonNew').click(function(){console.log("test");addCourseBatch(data.id,$('#input').val(),(obj)=>alert("batch "+obj.name+" added to course "+data.name))});
+        $('#buttonNew2').show();
         $("#buttonNew2").off("click");
         $('#buttonNew2').text("View Batches");
         $('#buttonNew2').click(async function(){await viewBatch(data.id)});
                
     }
     if(type=="batch"){
-        console.log("here4");
         $('#buttonNew').show();
         $('#buttonNew').text("View lectures");
         

@@ -79,7 +79,10 @@ $(function () {
 
 })
 function addStudentBatch(Id,batch,done){
-    console.log(batch);
+    if(batch.length==0){
+        alert("batch name can not be empty")
+        return
+    }
     $.post('https://learning-man-sys.herokuapp.com/api/students/'+Id+'/batches', {
         name: batch
     }, function (data) {
