@@ -1,9 +1,17 @@
-function addCourse (name) {
-    $.post('https://learning-man-sys.herokuapp.com/api/courses', {
-        name: name
-    }, function (data) {
-        done(data)
-    })
+function addCourse (name,done) {
+    $.ajax({
+        method: 'POST',
+        url:'https://learning-man-sys.herokuapp.com/api/courses',
+        contentType:"application/json",
+        data:{name:name},
+        success:function (data) {
+            done(data)
+        },
+        error: function (name) {
+            done(name)
+        }
+    });
+    
 }
 $(function () {
     let courseName = $('#courseName')
