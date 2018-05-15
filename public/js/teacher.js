@@ -54,18 +54,17 @@ $(function () {
 })
 var span = $('#span');
 span.onclick = function() {
-    modal.style.display = "none";
+    modal.removeAttr("style").hide();
 }
-var modal =$('#myModal')
+var modal =$('#myModal');
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
-        modal.style.display = "none";
+        modal.removeAttr("style").hide();
     }
 }
 $(function () {
     let teacherId = $('#teacherId')
-    var modal =$('#myModal');
 
     $('#btnSeeByIdTeacher').click(async function () {
         if(teacherId.val().length==0){
@@ -75,7 +74,7 @@ $(function () {
         await getTeacher(
             teacherId.val(),
             function (Teacher) {
-                modal.style.display = "block";
+                $('#myModal').show();
             }
         )
 
