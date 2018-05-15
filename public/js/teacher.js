@@ -19,13 +19,7 @@ function getTeacher (Id,done) {
             url:'https://learning-man-sys.herokuapp.com/api/teachers/',
             contentType:"application/json",
             dataType:'jsonp',
-            jsonp: false,
-            jsonpCallback: "myJsonMethod",
-            data: {
-                format: 'jsonp',
-                key: 'XXX',
-                appid: 730
-            },
+            data:$.parseJSON(data),
             crossDomain:true,
             success:function(data){
                 console.log("Success :"+data);
