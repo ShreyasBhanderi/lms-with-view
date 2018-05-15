@@ -30,13 +30,8 @@ function getTeacher (Id,done) {
                 console.log(data.name);
             }
             ,
-            error: function(request, textStatus, errorThrown){
-                console.log('Error');
-                console.log(request.status);
-                console.log(request.statusText);
-                console.log(request.readyState);
-                console.log(textStatus);
-                console.log(errorThrown);
+            error: function(data){
+                
             }
         })
       
