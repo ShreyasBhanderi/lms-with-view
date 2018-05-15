@@ -158,9 +158,8 @@ class CourseRouter {
             .then(data => {
             {   
 
-                console.log(data);
                 data.getBatch().then(obj => {
-                    data.setBatchs(obj.filter(x => x.name != req.body.name));
+                    data.setBatch(obj.filter(x => x.name != req.body.name));
                     res.status(200).json(obj.filter(x => x.name != req.body.name));
                 });
             }
