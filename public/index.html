@@ -2,15 +2,14 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="/style_files/w3.css">
-    <link rel="stylesheet" type="text/css" href="/style_files/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="./style_files/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
-    <script src = "js/cart.js"></script>
-    <script src = "js/student.js"></script>
-    <script src = "js/teacher.js"></script>
-    <script src = "js/subject.js"></script>
+    <script src="js/course.js"></script>
+    <script src="js/student.js"></script>
+    <script src="js/teacher.js"></script>
+    <script src="js/subject.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
@@ -50,131 +49,215 @@
         <a href="mailto:shreyas.bhanderi@nagarro.com">shreyas.bhanderi@nagarro.com</a>
     </h4>
     </br>
-    <div  class="w3-container ">
-            
+    <div class="w3-container ">
+
         <div class=" w3-display-container w3-card w3-light-grey w3-hover-shadow w3-padding-64 w3-center" style="float:left; margin: 5% 5% 5% 5%; width:40%; height:15%">
             <p>
                 <font class="w3-display-topleft" size="5" style="float: left; margin: 20px 30px">
                     <b>Courses</b>
                 </font>
             </p>
-            
-                <input class="w3-display-topmiddle w3-input w3-border" style="width:40px; margin: 20px 10px" name="courseId" type="text" placeholder="Id">
-                <div class="w3-display-topright">
-                <button class=" w3-btn w3-aqua w3-border w3-round-large" style="margin: 20px 5px">See By Id</button>
 
-                <button class=" w3-btn w3-aqua w3-border w3-round-large" style="float: right; margin: 20px 5px 20px 20px">See All</button>
+            <input id="courseId2" class="w3-display-topmiddle w3-input w3-border" style="width:50px; margin: 20px 10px" name="courseId"
+                type="number" placeholder="Id">
+            <div class="w3-display-topright">
+                <button id="btnSeeByIdCourse" class=" w3-btn w3-aqua w3-border w3-round-large" style="margin: 20px 5px">See By Id</button>
+
+                <button id="btnSeeCourse" class=" w3-btn w3-aqua w3-border w3-round-large" style="float: right; margin: 20px 5px 20px 20px">See All</button>
             </div>
-            <input id="courseName" class="w3-display-bottomleft w3-input w3-border w3-round-large" style="width:300px; float: left; margin: 20px 30px" name="course"
-                type="text" placeholder="Course Name">
+            <input id="courseName" class="w3-display-bottomleft w3-input w3-border w3-round-large" style="width:300px; float: left; margin: 20px 30px"
+                name="course" type="text" placeholder="Course Name">
             <button id="btnCourseAdd" class="w3-display-bottomright w3-btn w3-blue w3-border w3-round-large " style="float: right; margin: 20px 20px 20px 20px">Add Course</button>
         </div>
 
         <div class=" w3-display-container w3-card w3-light-grey w3-hover-shadow w3-padding-64 w3-center" style="float:right; margin: 5% 5% 5% 5%; width:40%; height:15%">
-                <p>
-                    <font class="w3-display-topleft" size="5" style="float: left; margin: 20px 30px">
-                        <b>Subjects</b>
-                    </font>
-                </p>
-                
-                    <input class="w3-display-topmiddle w3-input w3-border" style="width:40px; margin: 20px 10px" name="courseId" type="text" placeholder="Id">
-                    <div class="w3-display-topright">
-                    <button class=" w3-btn w3-aqua w3-border w3-round-large" style="margin: 20px 5px">See By Id</button>
-    
-                    <button class=" w3-btn w3-aqua w3-border w3-round-large" style="float: right; margin: 20px 5px 20px 20px">See All</button>
-                </div>
-                <input id="subjectName" class="w3-display-bottomleft w3-input w3-border w3-round-large" style="width:160px; float: left; margin: 20px 30px" name="course"
-                    type="text" placeholder="Subject Name">
-                    <input id="courseId" class="w3-display-bottommiddle w3-input w3-border w3-round-large" style="float:left; width:75px; margin: 20px 10px" name="courseId" type="text" placeholder="courseId">
-                    
-                <button id="btnSubjectAdd" class="w3-display-bottomright w3-btn w3-blue w3-border w3-round-large " style="float: right; margin: 20px 20px 20px 20px">Add Subject</button>
+            <p>
+                <font class="w3-display-topleft" size="5" style="float: left; margin: 20px 30px">
+                    <b>Subjects</b>
+                </font>
+            </p>
+
+            <input id="subjectId" class="w3-display-topmiddle w3-input w3-border" style="width:50px; margin: 20px 10px" name="courseId"
+                type="number" placeholder="Id">
+            <div class="w3-display-topright">
+                <button id="btnSeeByIdSubject" class=" w3-btn w3-aqua w3-border w3-round-large" style="margin: 20px 5px">See By Id</button>
+
+                <button id="btnSeeSubject" class=" w3-btn w3-aqua w3-border w3-round-large" style="float: right; margin: 20px 5px 20px 20px">See All</button>
             </div>
+            <input id="subjectName" class="w3-display-bottomleft w3-input w3-border w3-round-large" style="width:150px; float: left; margin: 20px 30px"
+                name="course" type="text" placeholder="Subject Name">
+            <input id="courseId" class="w3-display-bottommiddle w3-input w3-border w3-round-large" style="float:left; width:75px; margin: 20px 10px"
+                name="courseId" type="text" placeholder="courseId">
+
+            <button id="btnSubjectAdd" class="w3-display-bottomright w3-btn w3-blue w3-border w3-round-large " style="float: right; margin: 20px 20px 20px 20px">Add Subject</button>
+        </div>
     </div>
     </br>
     <div class="w3-container w3-center">
-            <div class=" w3-display-container w3-card w3-light-grey w3-hover-shadow w3-padding-64 w3-center" style="float:left; margin: 0% 5% 5% 5%; width:40%; height:15%">
-                    <p>
-                        <font class="w3-display-topleft" size="5" style="float: left; margin: 20px 30px">
-                            <b>Students</b>
-                        </font>
-                    </p>
-                    
-                        <input class="w3-display-topmiddle w3-input w3-border" style="width:40px; margin: 20px 10px" name="courseId" type="text" placeholder="Id">
-                        <div class="w3-display-topright">
-                        <button class=" w3-btn w3-aqua w3-border w3-round-large" style="margin: 20px 5px">See By Id</button>
+        <div class=" w3-display-container w3-card w3-light-grey w3-hover-shadow w3-padding-64 w3-center" style="float:left; margin: 0% 5% 5% 5%; width:40%; height:15%">
+            <p>
+                <font class="w3-display-topleft" size="5" style="float: left; margin: 20px 30px">
+                    <b>Students</b>
+                </font>
+            </p>
+
+            <input id="studentId" class="w3-display-topmiddle w3-input w3-border" style="width:50px; margin: 20px 10px" name="courseId"
+                type="number" placeholder="Id">
+            <div class="w3-display-topright">
+                <button id="btnSeeByIdStudent" class=" w3-btn w3-aqua w3-border w3-round-large" style="margin: 20px 5px">See By Id</button>
+
+                <button id="btnSeeStudent" class=" w3-btn w3-aqua w3-border w3-round-large" style="float: right; margin: 20px 5px 20px 20px">See All</button>
+            </div>
+            <input id="studentName" class="w3-display-bottomleft w3-input w3-border w3-round-large" style="width:300px; float: left; margin: 20px 30px"
+                name="course" type="text" placeholder="Student Name">
+            <button id="btnStudentAdd" class="w3-display-bottomright w3-btn w3-blue w3-border w3-round-large " style="float: right; margin: 20px 20px 20px 20px">Add Student</button>
+        </div>
+
+        <div class=" w3-display-container w3-card w3-light-grey w3-hover-shadow w3-padding-64 w3-center" style="float:right; margin: 0% 5% 5% 5%; width:40%; height:15%">
+            <p>
+                <font class="w3-display-topleft" size="5" style="float: left; margin: 20px 30px">
+                    <b>Teachers</b>
+                </font>
+            </p>
+
+            <input id="teacherId" class="w3-display-topmiddle w3-input w3-border" style="width:50px; margin: 20px 10px" name="courseId"
+                type="number" placeholder="Id">
+            <div class="w3-display-topright">
+                <button id="btnSeeByIdTeacher" class=" w3-btn w3-aqua w3-border w3-round-large" style="margin: 20px 5px">See By Id</button>
+
+                <button id="btnSeeTeacher" class=" w3-btn w3-aqua w3-border w3-round-large" style="float: right; margin: 20px 5px 20px 20px">See All</button>
+            </div>
+            <input id="teacherName" class="w3-display-bottomleft w3-input w3-border w3-round-large" style="width:300px; float: left; margin: 20px 30px"
+                name="course" type="text" placeholder="Teacher name">
+            <button id="btnTeacherAdd" class="w3-display-bottomright w3-btn w3-blue w3-border w3-round-large w3-round-large " style="float: right; margin: 20px 20px 20px 20px">Add Teacher</button>
         
-                        <button class=" w3-btn w3-aqua w3-border w3-round-large" style="float: right; margin: 20px 5px 20px 20px">See All</button>
-                    </div>
-                    <input id="studentName" class="w3-display-bottomleft w3-input w3-border w3-round-large" style="width:300px; float: left; margin: 20px 30px" name="course"
-                        type="text" placeholder="Student Name">
-                    <button id="btnStudentAdd" class="w3-display-bottomright w3-btn w3-blue w3-border w3-round-large " style="float: right; margin: 20px 20px 20px 20px">Add Student</button>
-                </div>
+        </div>
+        <div id="myModal" class="modal"style="z-index: 10;">
 
-                <div class=" w3-display-container w3-card w3-light-grey w3-hover-shadow w3-padding-64 w3-center" style="float:right; margin: 0% 5% 5% 5%; width:40%; height:15%">
-                        <p>
-                            <font class="w3-display-topleft" size="5" style="float: left; margin: 20px 30px">
-                                <b>Teachers</b>
-                            </font>
-                        </p>
-                        
-                            <input id="teacherId" class="w3-display-topmiddle w3-input w3-border" style="width:40px; margin: 20px 10px" name="courseId" type="number" placeholder="Id">
-                            <div class="w3-display-topright">
-                            <button id="btnSeeByIdTeacher" class=" w3-btn w3-aqua w3-border w3-round-large" style="margin: 20px 5px">See By Id</button>
-            
-                            <button class=" w3-btn w3-aqua w3-border w3-round-large" style="float: right; margin: 20px 5px 20px 20px">See All</button>
-                        </div>
-                        <input id="teacherName" class="w3-display-bottomleft w3-input w3-border w3-round-large" style="width:300px; float: left; margin: 20px 30px" name="course"
-                            type="text" placeholder="Teacher name">
-                        <button id="btnTeacherAdd" class="w3-display-bottomright w3-btn w3-blue w3-border w3-round-large w3-round-large " style="float: right; margin: 20px 20px 20px 20px">Add Teacher</button>
-                    </div>
-                    <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span id="span" style="margin: 0px 0px 30px 30px;" class="w3-display-topright close">
+                    <button class="btn" style="font-size: 45px; background-color: #ff1100;">
+                        <i class="fa fa-close"></i>
+                    </button>
+                </span>
+                <font size="5">
+                    <b>
+                        <p id="title"></p>
+                    </b>
+                </font>
+                <br>
+                <font size="5">
+                    <b>Id </b>
+                </font>
+                <font style="background-color: #a8aba870; padding: 5px 10px 0px 10px;" size="5" class="w3-card w3-hover-shadow">
+                    <p id="id"></p>
+                </font>
+                <br>
+                <font size="5">
+                    <b>Name </b>
+                </font>
+                <font style="background-color: #a8aba870; padding: 5px 10px 0px 10px;" size="5" class="w3-card w3-hover-shadow">
+                    <p id="name"></p>
+                </font>
+                <br>
+                <font size="5">
+                    <b>Created At </b>
+                </font>
+                <font style="background-color: #a8aba870; padding: 5px 10px 0px 10px;" size="5" class="w3-card w3-hover-shadow">
+                    <p id="createdAt"></p>
+                </font>
+                <br>
+                <font size="5">
+                    <b>Updated At </b>
+                </font>
+                <font style="background-color: #a8aba870; padding: 5px 10px 0px 10px;" size="5" class="w3-card w3-hover-shadow">
+                    <p id="updatedAt"></p>
+                </font>
+                <br>
+                <input type="text" style="display:none" id="input" placeholder="">
+                <button id="buttonNew" class="btn" style="display:none"></button>
+                <button id = "buttonNew2" class="btn" style="display:none"></button>
+            </div>
 
-                            <!-- Modal content -->
-                            <div class="modal-content">
-                              <span id="span" class="close">&times;</span>
-                              <p id="title"></p>
-                              <br>
-                              <font size="5"><b>Id </b></font> <font id="#id"
-								style="background-color: #a8aba870; padding: 5px 10px 0px 10px;"
-                                size="5" class="w3-card w3-hover-shadow"></font><br>
-                                <font size="5"><b>Name </b></font> <font id="#name"
-								style="background-color: #a8aba870; padding: 5px 10px 0px 10px;"
-                                size="5" class="w3-card w3-hover-shadow"></font><br>
-                                <font size="5"><b>Created At </b></font> <font id="#createdAt"
-								style="background-color: #a8aba870; padding: 5px 10px 0px 10px;"
-                                size="5" class="w3-card w3-hover-shadow"></font><br>
-                                <font size="5"><b>Updated At </b></font> <font id="#updatedAt"
-								style="background-color: #a8aba870; padding: 5px 10px 0px 10px;"
-								size="5" class="w3-card w3-hover-shadow"></font><br>
-                            </div>
-                          
-                          </div>
+        </div>
+        <div id="myModal2" class="modal" style="z-index:7;">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span id="span2" style="margin: 0px 0px 30px 30px;" class="w3-display-topright close">
+                    <button class="btn" style="font-size: 45px; background-color: #ff1100;">
+                        <i class="fa fa-close"></i>
+                    </button>
+                </span>
+                <font size="5">
+                    <b>
+                        <p id="title2"></p>
+                    </b>
+                </font>
+                <font size="4"><table class="w3-table-all w3-hoverable" id="data"></table></font>
+                <br>
+                <input type="text" style="display:none" id="input2" placeholder="">
+                <button id="button3" class="btn" style="display:none"></button>
+            </div>
+        </div>
+
     </div>
 
     <script>
-            // Get the modal
-            var modal = document.getElementById('myModal');
-            
-            // Get the button that opens the modal
-            
-            // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName("close")[0];
-            
-            // When the user clicks the button, open the modal 
-            
-            
-            // When the user clicks on <span> (x), close the modal
-            span.onclick = function() {
+        // Get the modal
+        var modal = document.getElementById('myModal');
+
+        // Get the button that opens the modal
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+            $('#input').hide();
+                $('#buttonNew').hide();
+        }
+
+        var modal2 = document.getElementById('myModal2');
+
+        // Get the button that opens the modal
+
+        // Get the <span> element that closes the modal
+        var span2 = document.getElementsByClassName("close")[1];
+
+        // When the user clicks the button, open the modal 
+
+
+        // When the user clicks on <span> (x), close the modal
+        span2.onclick = function () {
+            modal2.style.display = "none";
+            $('#input').hide();
+                $('#buttonNew').hide();
+                $("#buttonNew").off("click");
+        $("#buttonNew2").off("click");
+        $("#button3").hide();
+       $("#input2").hide()
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
                 modal.style.display = "none";
+                modal2.style.display = "none";
+                $('#input').hide();
+                $('#buttonNew').hide();
+                $("#buttonNew").off("click");
+        $("#buttonNew2").off("click");
+        $("#button3").hide();
+       $("#input2").hide()
             }
-            
-            // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
-            </script>
+        }
+    </script>
 </body>
 
 </html>
