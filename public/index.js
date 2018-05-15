@@ -1,7 +1,6 @@
 function addCourse (name,done) {
     $.ajax({
         type:'POST',
-        method: 'POST',
         url:'https://learning-man-sys.herokuapp.com/api/courses',
         contentType:"application/json",
         dataType:'jsonp',
