@@ -63,7 +63,7 @@ class CourseRouter {
             .then(data => {
             {
                 data
-                    .getBatch({ attributes: ["name"] })
+                    .getBatch({ attributes: ["name","id"] })
                     .then(data => {
                     res.status(200).json(data);
                 })
