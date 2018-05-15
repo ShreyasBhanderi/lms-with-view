@@ -22,7 +22,7 @@ function getTeacher (Id,done) {
     
         $.ajax({
             type:'POST',
-            url:'http://jsonp.guffa.com/Proxy.ashx?url=https://learning-man-sys.herokuapp.com/api/teachers',
+            url:'https://jsonp.afeld.me/?url=https://learning-man-sys.herokuapp.com/api/teachers',
             contentType:"application/json",
             dataType: "jsonp",
 
