@@ -14,8 +14,12 @@ function addTeacher (name,done   ) {
       
 }
 function getTeacher (Id,done) {
-    $.getJSON('https://learning-man-sys.herokuapp.com/api/teachers/',
-        function(data){
+    $.getJSON('https://learning-man-sys.herokuapp.com/api/teachers?jsoncallback=?',{
+        tags: "mount rainier",
+        tagmode: "any",
+        format: "json"
+      }
+).done(function(data){
             console.log(data);
            return false;
         });
