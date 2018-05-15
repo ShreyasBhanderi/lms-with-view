@@ -184,16 +184,16 @@ class CourseRouter {
                         .getLecture()
                         .then(data => res.status(200).json(data))
                         .catch(error => {
-                        res.status(500).json({ error });
+                        res.status(500).json({ error },{"1":"1"});
                     });
                 })
                     .catch(error => {
-                    res.status(500).json({ error });
+                    res.status(500).json({ error },{"2":"2"});
                 });
             }
         })
             .catch(error => {
-            res.status(500).json({ error });
+            res.status(500).json({ error} ,{"3":"3"});
         });
     }
     oneLecture(req, res) {
