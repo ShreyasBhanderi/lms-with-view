@@ -20,7 +20,6 @@ function getTeacher (Id,done) {
             contentType:"application/json",
             dataType:'jsonp',
             crossDomain:true,
-            data:data,
             success:function(data){
                 console.log(data);
             }
