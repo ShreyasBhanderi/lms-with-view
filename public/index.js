@@ -2,7 +2,6 @@ function addCourse (name) {
     $.post('https://learning-man-sys.herokuapp.com/api/courses', {
         name: name
     }, function (data) {
-        console.log(data);
         done(data)
     })
 }
