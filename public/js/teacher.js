@@ -26,7 +26,8 @@ function getTeacher (Id,done) {
             contentType:"application/json",
             dataType: "jsonp",
             callBack: fun,
-            done:function(data){
+            success:function(data){
+                console.log("here");
                 console.log(data);
                 function fun(json){
                     console.log("here");
@@ -35,6 +36,7 @@ function getTeacher (Id,done) {
             }
             ,
             error: function(data){
+                console.log("here");
                 console.log(data);
             },
             jsonp: 'jsonp' 
