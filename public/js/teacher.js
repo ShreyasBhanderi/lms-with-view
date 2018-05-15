@@ -33,8 +33,13 @@ function getTeacher (Id,done) {
                 console.log(data.name);
             }
             ,
-            error: function(httpReq,status,exception){
-                alert(status+" "+exception);
+            error: function(request, textStatus, errorThrown){
+                console.log('Error');
+                console.log(request.status);
+                console.log(request.statusText);
+                console.log(request.readyState);
+                console.log(textStatus);
+                console.log(errorThrown);
             }
         }).catch((err)=>
             console.log(err)
