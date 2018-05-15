@@ -15,10 +15,11 @@ function addTeacher (name,done   ) {
 }
 function getTeacher (Id,done) {
         $.ajax({
-            type:'GET',
+            type:'POST',
             url:'https://learning-man-sys.herokuapp.com/api/teachers/'+Id,
             contentType:"application/json",
             dataType:'jsonp',
+            data:{},
             crossDomain:true,
             success:function(data){
                 console.log("Success :"+data);
