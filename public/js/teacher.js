@@ -36,11 +36,10 @@ function getTeacher (Id,done) {
             error: function(httpReq,status,exception){
                 alert(status+" "+exception);
             }
-        }).catch(err){
-            console.log("error"+err)
-        };
+        }).catch((err)=>
+            console.log("error"+err));
       
-}
+}   
 $(function () {
     let teacherName = $('#teacherName')
     
