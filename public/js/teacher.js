@@ -52,17 +52,7 @@ $(function () {
     })
 
 })
-var span = $('#span');
-span.onclick = function() {
-    modal.removeAttr("style").hide();
-}
-var modal =$('#myModal');
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.removeAttr("style").hide();
-    }
-}
+
 $(function () {
     let teacherId = $('#teacherId')
 
