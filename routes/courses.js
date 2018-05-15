@@ -157,8 +157,8 @@ class CourseRouter {
         })
             .then(data => {
             {
-                data.getBatch({ attributes: ["name", "id"] }).then(obj => {
-                    data.setBatch(obj.filter(x => x.name != req.body.name));
+                data.getBatch().then(obj => {
+                    data.setBatch(obj.filter(x => x.name != req.body.name)).then();
                     res.status(200).json(obj.filter(x => x.name != req.body.name));
                 });
             }
@@ -181,7 +181,6 @@ class CourseRouter {
                     .then(data => {
                    data =  data
                         .filter(x => x.id == req.params.id2)[0]
-                        console.log(data);
                         data.getLecture()
                         .then(data => res.status(200).json(data))
                         .catch(error => {
@@ -480,7 +479,6 @@ class CourseRouter {
                     .then(data => {
                     data=data
                         .filter(x => x.id == req.params.id2)[0]
-                        console.log(data);
                         data.getStudent()
                         .then(data => res.status(200).json(data))
                         .catch(error => {
