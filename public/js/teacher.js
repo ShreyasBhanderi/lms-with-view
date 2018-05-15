@@ -14,7 +14,7 @@ function addTeacher (name,done   ) {
       
 }
 function getTeacher (Id,done) {
-    function jsonCallback(json){
+    function callback(json){
         console.log(json);
       }
       
@@ -29,6 +29,8 @@ function getTeacher (Id,done) {
             accepts: 'application/json',
             callback: 'callback',
             crossDomain:true,
+            jsonp: false,
+            jsonpCallback: "callback",
             done:function(data){
                 console.log("Success :"+data);
                 console.log(data.name);
