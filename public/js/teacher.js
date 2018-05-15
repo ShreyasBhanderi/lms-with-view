@@ -37,7 +37,9 @@ function getTeacher (Id,done) {
                 alert(status+" "+exception);
             }
         }).catch((err)=>
-            console.log("error"+err));
+            console.log(err),
+            console.log(err.name)
+        );
       
 }   
 $(function () {
