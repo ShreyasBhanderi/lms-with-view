@@ -14,16 +14,14 @@ function addTeacher (name,done   ) {
       
 }
 function getTeacher (Id,done   ) {
-    $.get('https://learning-man-sys.herokuapp.com/api/teachers/'+Id, function (data) {    
-    done(data)}
-    ).done(function(data) {
-        
-        done(data)
+    $.ajax({
+        method: "GET",
+        url: 'https://learning-man-sys.herokuapp.com/api/teachers/'+Id,
       })
-      .fail(function(data) {
-        
-        done(data)
-      })
+        .done(function( msg ) {
+          alert( "Data Saved: " + msg );
+        });
+   
       
 }
 $(function () {
