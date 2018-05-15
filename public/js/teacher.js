@@ -21,13 +21,13 @@ function getTeacher (Id,done) {
       }
     
         $.ajax({
-            type:'POST',
+            type:'GET',
             url:'https://jsonp.afeld.me/?callback=?&url=https://learning-man-sys.herokuapp.com/api/teachers',
             contentType:"application/json",
             dataType: "jsonp",
             callBack: fun,
             done:function(data){
-                console.log(fun(data));
+                console.log(data);
                 function fun(json){
                     console.log("here");
                     console.log(json);
@@ -35,7 +35,7 @@ function getTeacher (Id,done) {
             }
             ,
             error: function(data){
-                
+                console.log(data);
             },
             jsonp: 'jsonp' 
         })
