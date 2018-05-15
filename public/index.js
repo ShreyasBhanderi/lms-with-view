@@ -92,7 +92,8 @@ $(function () {
 
     })
 
-})function addTeacher (name,done   ) {
+})
+function addTeacher (name,done   ) {
     $.post('https://learning-man-sys.herokuapp.com/api/teachers', {
         name: name
     }, function (data) {
