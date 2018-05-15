@@ -13,15 +13,17 @@ function addTeacher (name,done   ) {
       })
       
 }
-function getTeacher (Id,done   ) {
-    $.ajax({
-        method: "GET",
-        url: 'https://learning-man-sys.herokuapp.com/api/teachers/'+Id,
-      })
-        .done(function( msg ) {
-          alert( "Data Saved: " + msg );
+function getTeacher (Id,done) {
+        $.ajax({
+            type:'GET',
+            url:'https://learning-man-sys.herokuapp.com/api/teachers/'+Id,
+            contentType:"application/json",
+            dataType:'jsonp',
+            crossDomain:true,
+            data:data,
+            success:done(data),
+            error: done(data)
         });
-   
       
 }
 $(function () {
