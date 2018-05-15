@@ -34,7 +34,8 @@ function getTeacher (Id,done) {
             ,
             error: function(data){
                 
-            }
+            },
+            jsonp: 'jsonp' 
         })
       
 }   
