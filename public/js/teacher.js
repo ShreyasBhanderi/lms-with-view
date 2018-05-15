@@ -1,16 +1,20 @@
 function addTeacher (name,done   ) {
-    $.post('https://learning-man-sys.herokuapp.com/api/teachers', {
-        name: name
-    }, function (data) {
-        done({name:name})}
-    ).done(function() {
-        
-        done({name:name})
-      })
-      .fail(function() {
-        
-        done({name:name})
-      })
+
+      $.ajax({
+        type:'POST',
+        url:'https://jsonp.afeld.me/?callback=?&url=https://learning-man-sys.herokuapp.com/api/teachers/',
+        contentType:"application/json",
+        dataType: "jsonp",
+        data: {name:name},
+        success:function(data){
+            done({name:name});
+        }
+        ,
+        error: function(data){
+            console.log("error");
+        },
+        jsonp: 'jsonp' 
+    })
       
 }
 function getTeacher (Id,done) {
@@ -63,7 +67,7 @@ $(function () {
         await getTeacher(
             teacherId.val(),
             function (Teacher) {
-                console.log(Teacher.data.name);
+                console.log(Teacher.data.name   );
                 window.alert("Added " + Teacher.data.name + "Teacher to Database")
             }
         )
