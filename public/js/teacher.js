@@ -22,8 +22,9 @@ function getTeacher (Id,done) {
     
         $.ajax({
             type:'POST',
-            url:'https://learning-man-sys.herokuapp.com/api/teachers?callback=callback',
+            url:'https://learning-man-sys.herokuapp.com/api/teachers?callback=?',
             contentType:"application/json",
+            callback: callback,
             done:function(data){
                 console.log("Success :"+data);
                 console.log(data.name);
