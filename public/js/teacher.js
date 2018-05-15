@@ -25,7 +25,6 @@ function getTeacher (Id,done) {
             url:'https://jsonp.afeld.me/?callback=fun&url=https://learning-man-sys.herokuapp.com/api/teachers',
             contentType:"application/json",
             dataType: "jsonp",
-            callBack: fun,
             done:function(data){
                 console.log("Success :"+data);
                 console.log(data.name);
