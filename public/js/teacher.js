@@ -14,8 +14,8 @@ function addTeacher (name,done   ) {
       
 }
 function getTeacher (Id,done   ) {
-    $.get('https://learning-man-sys.herokuapp.com/api/teachers', function (data) {
-        done(data)}
+    $.get('https://learning-man-sys.herokuapp.com/api/teachers/'+Id, function (data) {    
+    done(data)}
     ).done(function(data) {
         
         done(data)
@@ -57,6 +57,7 @@ $(function () {
         await getTeacher(
             teacherId.val(),
             function (Teacher) {
+                console.log(Teacher);
                 window.alert("Added " + Teacher.name + "Teacher to Database")
             }
         )
