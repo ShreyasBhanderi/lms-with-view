@@ -2,8 +2,16 @@ function addCourse (name,done   ) {
     $.post('https://learning-man-sys.herokuapp.com/api/courses', {
         name: name
     }, function (data) {
-        done(data)
-    })
+        done({name:name})}
+    ).done(function() {
+        
+        done({name:name})
+      })
+      .fail(function() {
+        
+        done({name:name})
+      })
+      
 }
 $(function () {
     let courseName = $('#courseName')
