@@ -22,10 +22,9 @@ function getTeacher (Id,done) {
     
         $.ajax({
             type:'POST',
-            url:'https://learning-man-sys.herokuapp.com/api/teachers?wt=json&json.wrf=callback=getJSON',
+            url:'http://jsonp.guffa.com/Proxy.ashx?url=https://learning-man-sys.herokuapp.com/api/teachers',
             contentType:"application/json",
             dataType: "jsonp",
-            callback: getJSON,
 
             done:function(data){
                 console.log("Success :"+data);
