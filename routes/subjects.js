@@ -74,8 +74,10 @@ class SubjectRouter {
     }
     create(req, res) {
         const name = req.body.name;
+        const courseId = req.body.courseId;
         const course = new subject_1.default({
-            name
+            name,
+            courseId
         });
         course.save()
             .then((data) => {

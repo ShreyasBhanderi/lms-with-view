@@ -92,11 +92,11 @@ class CourseRouter {
                 .then(function (obj) {
                 if (obj) {
                     // update
-                    return obj.update({ name: req.body.name });
+                    return obj.update({ name: req.body.name, courseId :id });
                 }
                 else {
                     // insert
-                    return batch_2.default.create({ name: req.body.name });
+                    return batch_2.default.create({ name: req.body.name, courseId :id });
                 }
             })
                 .then(obj => {
@@ -348,11 +348,11 @@ class CourseRouter {
                         .then(function (obj) {
                         if (obj) {
                             // update
-                            return obj.update({ name: req.body.name });
+                            return obj.update({ name: req.body.name, subjectId: req.body.subjectId, teacherId: req.body.teacherId });
                         }
                         else {
                             // insert
-                            return lecture_1.default.create({ name: req.body.name });
+                            return lecture_1.default.create({ name: req.body.name, subjectId: req.body.subjectId, teacherId: req.body.teacherId });
                         }
                     })
                         .then(obj => {
