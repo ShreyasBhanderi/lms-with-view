@@ -64,6 +64,7 @@ $(function () {
         await getTeacher(
             teacherId.val(),
             function (Teacher) {
+                setUpModal(Teacher.data,"Teacher Details");
                 $('#myModal').show();
             }
         )
@@ -72,3 +73,12 @@ $(function () {
     })
 
 })
+
+function setUpModal(data,title){
+    console.log(data);
+    let id = $('#id');
+    let name= $('#name');
+    let crAt = $('#createdAt');
+    let upAt = $('#updatedAt');
+    id.innerHTML = data.id;
+}
