@@ -69,7 +69,7 @@ $(function() {
 
   $("#btnSeeByIdTeacher").click(async function() {
     if (teacherId.val().length == 0) {
-      await window.alert("Teacher Id cannot be empty");
+      await window.alert("Teacher Id should be number");
       return;
     }
     await getTeacher(teacherId.val(), function(Teacher) {

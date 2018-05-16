@@ -18,8 +18,12 @@ $(function () {
     let courseId =  $('#courseId')
     
     $('#btnSubjectAdd').click(async function () {
-        if(subjectname.val().length==0 || courseId.val().length==0){
-            await window.alert("Subject name or courseId cannot be empty")
+        if(subjectname.val().length==0 ){
+            await window.alert("Subject name  cannot be empty")
+            return;
+         }
+         if(courseId.val().length==0 ){
+            await window.alert("Course Id should be number")
             return;
          }
         await addSubject(

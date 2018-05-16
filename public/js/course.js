@@ -116,7 +116,7 @@ $(function () {
 
     $('#btnSeeByIdCourse').click(async function () {
         if(courseId.val().length==0){
-            await window.alert("Course Id cannot be empty")
+            await window.alert("Course Id should be number")
             return;
          }
         await getCourse(
@@ -126,6 +126,7 @@ $(function () {
                 $('#myModal').show();
                 $("#input").attr("placeholder", "Add batch");
                 $('#input').show();
+                $('#input2').val("");
                 $('#buttonNew').show();
                 $('#buttonNew').text("Add Batch");
                 $('#buttonNew').click(function(){addCourseBatch(Course.data.id,$('#input').val(),(obj)=>alert("batch "+obj.name+" added to course "+data.name))});
@@ -154,13 +155,13 @@ async function viewBatch(course){
 }
 async function viewLecture(course,batch){
     await getAllLecture(course,batch,function(Lecture) {
-        console.log("In viewLecture");
         setUpAllModal(Lecture, "Lecture Details","lecture",course,batch);
         $('#myModal').hide();   
         $("#buttonNew").off("click");
         $("#button3").off("click");
         $("#buttonNew2").off("click");
         $('#buttonNew2').hide();
+        $('#input2').val("");
         $("#input2").attr("placeholder", "Lecture's name");
         $('#input2').show();
         $("#input3").attr("placeholder", "Lecture's subjectId");
@@ -183,6 +184,7 @@ async function viewStudent(course,batch){
         $("#buttonNew").off("click");
         $("#buttonNew2").off("click");
         $('#buttonNew2').hide();
+        $('#input2').val("");
         $("#input2").attr("placeholder", "Add Student");
         $('#input2').show();
         $('#button3').show();
@@ -217,11 +219,11 @@ function addBatchLecture(course,batch,lecture,done){
         return
     }
     if( $('#input3').val().length==0){
-        alert("subjectId can not be empty")
+        alert("subjectId should be number")
         return
     }
     if( $('#input4').val().length==0){
-        alert("courseId can not be empty")
+        alert("courseId should be number")
         return
     }
     $.post('https://learning-man-sys.herokuapp.com/api/courses/'+course+'/batches/'+batch+'/lectures', {

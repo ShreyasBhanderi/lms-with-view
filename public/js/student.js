@@ -57,7 +57,7 @@ $(function () {
 
     $('#btnSeeByIdStudent').click(async function () {
         if(studentId.val().length==0){
-            await window.alert("Student Id cannot be empty")
+            await window.alert("Student Id should be number")
             return;
          }
         await getStudent(
@@ -67,6 +67,7 @@ $(function () {
                 setUpModal(Student.data,"Student Details","student");
                 $("#input").attr("placeholder", "Enroll in batch");
       $('#input').show();
+      $('#input2').val("");
       $('#buttonNew').show();
       $('#buttonNew').text("Enroll");
       $('#buttonNew').click(function(){addStudentBatch(Student.data.id,$('#input').val(),(obj)=>alert("student "+Student.data.name+" added to batch "+obj.name))});
