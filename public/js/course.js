@@ -161,8 +161,12 @@ async function viewLecture(course,batch){
         $("#button3").off("click");
         $("#buttonNew2").off("click");
         $('#buttonNew2').hide();
-        $("#input2").attr("placeholder", "Add Lecture");
+        $("#input2").attr("placeholder", "Lecture's name");
         $('#input2').show();
+        $("#input3").attr("placeholder", "Lecture's subjectId");
+        $('#input3').show();
+        $("#input4").attr("placeholder", "Lecture's teacherId");
+        $('#input4').show();
         $('#button3').show();
         $('#button3').text("Add Lecture");
         $('#button3').click(function(){addBatchLecture(course,batch,$('#input2').val(),()=>{viewLecture(course,batch)})});
@@ -173,7 +177,9 @@ async function viewLecture(course,batch){
 async function viewStudent(course,batch){
     await getAllStudent(course,batch,function(Student) {
         setUpAllModal(Student, "Student Details","batchStudent",course,batch);
-        $('#myModal').hide();   
+        $('#myModal').hide();
+        $("#input3").hide()
+        $("#input4").hide()   
         $("#buttonNew").off("click");
         $("#buttonNew2").off("click");
         $('#buttonNew2').hide();
@@ -210,8 +216,18 @@ function addBatchLecture(course,batch,lecture,done){
         alert("lecture name can not be empty")
         return
     }
+    if( $('#input3').val().length==0){
+        alert("subjectId can not be empty")
+        return
+    }
+    if( $('#input4').val().length==0){
+        alert("courseId can not be empty")
+        return
+    }
     $.post('https://learning-man-sys.herokuapp.com/api/courses/'+course+'/batches/'+batch+'/lectures', {
-        name: lecture
+        name: lecture,
+        subjectId: $('#input3').val(),
+        teacherId: $('#input4').val()
     }, function (data) {
         done({name:batch})}
     ).done(function() {

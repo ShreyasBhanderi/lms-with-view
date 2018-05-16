@@ -86,8 +86,8 @@
             </div>
             <input id="subjectName" class="w3-display-bottomleft w3-input w3-border w3-round-large" style="width:150px; float: left; margin: 20px 30px"
                 name="course" type="text" placeholder="Subject Name">
-            <input id="courseId" class="w3-display-bottommiddle w3-input w3-border w3-round-large" style="float:left; width:75px; margin: 20px 10px"
-                name="courseId" type="text" placeholder="courseId">
+            <input id="courseId" class="w3-display-bottommiddle w3-input w3-border w3-round-large" style="float:left; width:95px; margin: 20px 10px"
+                name="courseId" type="number" placeholder="courseId">
 
             <button id="btnSubjectAdd" class="w3-display-bottomright w3-btn w3-blue w3-border w3-round-large " style="float: right; margin: 20px 20px 20px 20px">Add Subject</button>
         </div>
@@ -198,6 +198,8 @@
                 <font size="4"><table class="w3-table-all w3-hoverable" id="data"></table></font>
                 <br>
                 <input type="text" style="display:none" id="input2" placeholder="">
+                <input type="number" style="display:none" id="input3" placeholder="">
+                <input type="number" style="display:none" id="input4" placeholder="">
                 <button id="button3" class="btn" style="display:none"></button>
             </div>
         </div>
@@ -242,6 +244,8 @@
         $("#buttonNew2").off("click");
         $("#button3").hide();
        $("#input2").hide()
+       $("#input3").hide()
+       $("#input4").hide()
         }
 
         // When the user clicks anywhere outside of the modal, close it
@@ -255,6 +259,8 @@
         $("#buttonNew2").off("click");
         $("#button3").hide();
        $("#input2").hide()
+       $("#input3").hide()
+       $("#input4").hide()
             }
         }
     </script>
