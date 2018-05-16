@@ -2,23 +2,32 @@ function addSubject (name,courseId,done   ) {
     $.post('https://learning-man-sys.herokuapp.com/api/subjects', {
         name: name,courseId:courseId
     }, function (data) {
-        done({name:name})}
+        done({name:name})},"json"
     ).done(function() {
         
         done({name:name})
       })
-      .fail(function() {
+      .fail(function(xhr,error,status) {
+          getCourse(courseId,(data)=>{
+            if(data.data!=null) done({name:name});
+            else alert("Course with Id "+courseId+" doesn't exist");
+          })
         
-        done({name:name})
+        
       })
       
+      
+}
+function handleAjaxError(jqXHR, textStatus, errorThrown) {
+    console.log("here")
+    console.log(jqXHR.status)
 }
 $(function () {
     let subjectName = $('#subjectName') ;
     let courseId =  $('#courseId')
     
     $('#btnSubjectAdd').click(async function () {
-        if(subjectname.val().length==0 ){
+        if(subjectName.val().length==0 ){
             await window.alert("Subject name  cannot be empty")
             return;
          }
@@ -30,7 +39,7 @@ $(function () {
             subjectName.val(),
             courseId.val(),
             function (addedSubject) {
-                window.alert("Added " + addedSubject.name + "Subject to Database")
+                window.alert("Added " + addedSubject.name + " Subject to Database")
             }
         )
 

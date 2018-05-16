@@ -237,8 +237,15 @@ function addBatchLecture(course,batch,lecture,done){
         done({name:batch})
       })
       .fail(function() {
-        
-        done({name:batch})
+        getTeacher($('#input4').val(),(data)=>{
+            if(data.data==null)  alert("Teacher with id "+$('#input4').val()+" doesn't exist");
+            else{
+                getSubject($('#input3').val(),(data)=>{
+                    if(data.data==null) alert("Subject with id "+$('#input4').val()+" doesn't exist");
+                    else done({name:name})
+                })
+            }
+        })
       })
 }
 function addBatchStudent(course,batch,student,done){
